@@ -1,0 +1,127 @@
+// Общий файл элементов форм
+// Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
+@import "base/forms/forms";
+
+// Стили попапов
+// @import "base/popup";
+
+// Стили спойлеров
+//@import "base/spollers";
+
+// Стили табов
+// @import "base/tabs";
+
+// Стили карт
+// @import "base/maps";
+
+// Стили блока "показать еще"
+// @import "base/showmore";
+
+// Стили для полноэкранного блока
+// @import "base/fullscreen";
+
+// Стили для липкого блока
+// @import "base/sticky";
+
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+[class*="-ibg"] {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+[class*="-ibg_contain"] {
+	img {
+		object-fit: contain;
+	}
+}
+
+// Шаблоны (заготовки)
+// @extend %имя шаблона;
+// Сниппет (SCSS): ex
+
+// Счетчик для списка
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+	li {
+		position: relative;
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+// Адаптивное видео
+%responsiveVideo {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+// Видео в качестве фона
+%videoBackground {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}
+// Серый фильтр
+%grayfilter {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+// Отменить выделение
+%noselect {
+	user-select: none;
+}
+// Зеркальное отображение
+%mirror {
+	transform: scale(-1, 1);
+}
+// Плавный скролл
+%smoothscroll {
+	-webkit-overflow-scrolling: touch;
+}
+// Скрыть скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

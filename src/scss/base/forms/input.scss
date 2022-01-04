@@ -1,0 +1,25 @@
+//<INPUT>
+// Снипет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px 20px;
+	border: 1px solid #eee;
+	&._focus {
+	}
+	&._error {
+	}
+}
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}

@@ -1,0 +1,123 @@
+// <SELECT>
+// Снипет (HTML): sel
+.select {
+	position: relative;
+	// .select__body
+	&__body {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		color: inherit;
+		text-align: left;
+		border: 1px solid #d9d9d9;
+		background-color: #fff;
+		cursor: pointer;
+		width: 100%;
+		border-radius: 4px;
+	}
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		height: 30px;
+		padding: 0px 15px;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		&:before {
+			content: "";
+			align-self: stretch;
+			flex: 0 0 10px;
+			transition: all 0.3s ease 0s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			._select-open & {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	// .select__options
+	&__options {
+		color: #000;
+		position: absolute;
+		top: 29px;
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border-top: 0;
+		border: 1px solid #d9d9d9;
+		border-top: 0;
+		padding: 10px 0px 5px 0px;
+	}
+	// .select__scroll
+	&__scroll {
+		overflow-y: auto;
+		overflow-x: hidden;
+		// Максимальная высота
+		max-height: 200px;
+		// Стили скроллбара
+		.simplebar-scrollbar {
+			&::before {
+				//opacity: 1;
+			}
+		}
+	}
+	// .select__option
+	&__option {
+		width: 100%;
+		display: block;
+		text-align: left;
+		cursor: pointer;
+		padding: 5px 15px;
+		color: inherit;
+		&._select-selected {
+			background-color: #eee;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #d9d9d9;
+			}
+		}
+	}
+
+	// Конструкция дополнительных данных
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+	&__asset {
+	}
+	&__text {
+	}
+
+	// Состояния селекта
+	&._select-open {
+		z-index: 5;
+	}
+	&._select-disabled {
+	}
+	&._select-active {
+	}
+	&._select-focus {
+	}
+	&._select-multiple {
+	}
+	&._select-checkbox {
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}

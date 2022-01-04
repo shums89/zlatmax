@@ -1,0 +1,83 @@
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+//Percent
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+//Адаптивное свойство
+
+//Currency
+@mixin currency($sym) {
+	&::after {
+		content: "#{$sym}";
+	}
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	gap: $gap;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+		$widthFrom: $maxWidth;
+	}
+	@if ($minSize <= 0) {
+		$minSize: 0.0001;
+	}
+	@if ($startSize <= 0) {
+		$startSize: 0.0001;
+	}
+
+	// Брейк-поинты в EM
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+
+	// Получение значения свойства
+	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+	// Если отрицательные значения
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+	}
+
+	@if $widthFrom == $containerWidth or $widthFrom == $maxWidth or $keepSize == 1 or $keepSize == 2 {
+		@media (min-width: $widthFromMedia) {
+			#{$property}: rem($startSize);
+		}
+	}
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		#{$property}: $propertyValue;
+	}
+	@if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+		@media (max-width: $widthToMedia) {
+			#{$property}: rem($minSize);
+		}
+	}
+}

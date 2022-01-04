@@ -1,0 +1,947 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Rating": {
+		"scope": "html",
+		"prefix": "rating",
+		"body": [
+			"<div class=\"rating rating_set\">\n\t<div class=\"rating__body\">\n\t\t<div class=\"rating__active\"></div>\n\t\t<div class=\"rating__items\">\n\t\t\t<input type=\"radio\" class=\"rating__item\" value=\"1\" name=\"rating\">\n\t\t\t<input type=\"radio\" class=\"rating__item\" value=\"2\" name=\"rating\">\n\t\t\t<input type=\"radio\" class=\"rating__item\" value=\"3\" name=\"rating\">\n\t\t\t<input type=\"radio\" class=\"rating__item\" value=\"4\" name=\"rating\">\n\t\t\t<input type=\"radio\" class=\"rating__item\" value=\"5\" name=\"rating\">\n\t\t</div>\n\t</div>\n\t<div class=\"rating__value\">3.6</div>\n</div>"
+		],
+		"description": "Добавляет базовый HTML код рейтинга"
+	},
+	"Spollers": {
+		"scope": "html",
+		"prefix": "spollers",
+		"body": [
+			"<div data-spollers class=\"spollers\">\n\t<div class=\"spollers__item\">\n\t\t<button type=\"button\" data-spoller class=\"spollers__title\">Заголовок спойлера</button>\n\t\t<div class=\"spollers__body\">Контент спойлера</div>\n\t</div>\n</div>"
+		],
+		"description": "Добавляет базовый HTML код спойлеров"
+	},
+	"Tabs": {
+		"scope": "html",
+		"prefix": "tabs",
+		"body": [
+			"<div data-tabs class=\"${1:tabs}\">\n\t<nav data-tabs-titles class=\"${1:tabs}__navigation\">\n\t\t<button type=\"button\" class=\"${1:tabs}__title _tab-active\">Таб №1</button>\n\t\t<button type=\"button\" class=\"${1:tabs}__title\">Таб №2</button>\n\t\t<button type=\"button\" class=\"${1:tabs}__title\">Таб №3</button>\n\t</nav>\n\t<div data-tabs-body class=\"${1:tabs}__content\">\n\t\t<div class=\"${1:tabs}__body\">\n\t\t\t1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!\n\t\t</div>\n\t\t<div class=\"${1:tabs}__body\">\n\t\t\t2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!\n\t\t</div>\n\t\t<div class=\"${1:tabs}__body\">\n\t\t\t3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!\n\t\t</div>\n\t</div>\n</div>"
+		],
+		"description": "Добавляет базовый HTML код табов"
+	},
+	"Show More": {
+		"scope": "html",
+		"prefix": "showmore",
+		"body": [
+			"<div data-showmore class=\"${1:block}\">\n\t<div data-showmore-content class=\"${1:block}__content\"></div>\n\t<button hidden data-showmore-button type=\"button\" class=\"${1:block}__more\"><span>Показать еще</span><span>Скыть</span></button>\n</div>"
+		],
+		"description": "Добавляет базовый HTML код блока 'показать еще'"
+	},
+	"Swiper": {
+		"scope": "html",
+		"prefix": "swiper",
+		"body": [
+			"<div class=\"${1:имя блока}__slider\">\n\t<div class=\"${1:имя блока}__swiper\">\n\t\t<div class=\"${1:имя блока}__slide\"></div>\n\t</div>\n</div>"
+		],
+		"description": "Добавляет базовый HTML код слайдера Swiper"
+	},
+	"Quantity": {
+		"scope": "html",
+		"prefix": "quantity",
+		"body": "<div class=\"quantity\">\n\t<button type=\"button\" class=\"quantity__button quantity__button_plus\"></button>\n\t<div class=\"quantity__input\">\n\t\t<input autocomplete=\"off\" type=\"text\" name=\"form[]\" value=\"1\">\n\t</div>\n\t<button type=\"button\" class=\"quantity__button quantity__button_minus\"></button>\n</div>",
+		"description": "Добавняет HTML формы с кол-вом"
+	},
+	"Add tooltip": {
+		"scope": "html",
+		"prefix": "tip",
+		"body": [
+			"data-tippy-content=\"Подсказка\""
+		],
+		"description": "Добавляет текст-подсказку (Tippy)"
+	},
+	"Add data-required": {
+		"scope": "html",
+		"prefix": "req",
+		"body": [
+			"data-required"
+		],
+		"description": "Добавляет атрибут к полю формы"
+	},
+	"Add dynamic adapt": {
+		"scope": "html",
+		"prefix": "da",
+		"body": [
+			"data-da=\".${1:имя блока}, 768\""
+		],
+		"description": "Добавляет атрибут динамического адаптива"
+	},
+	"Add image IBG": {
+		"scope": "html",
+		"prefix": "ibg",
+		"body": [
+			"<div class=\"${1:имя блока}__image-ibg\"><img data-src=\"@img$2\" alt=\"\"></div>"
+		],
+		"description": "Добавляет объект с картинкой и классом IBG"
+	},
+	"Add Link with image IBG": {
+		"scope": "html",
+		"prefix": "ibga",
+		"body": [
+			"<a href=\"\" class=\"${1:имя блока}__image-ibg\"><img data-src=\"@img$2\" alt=\"\"></a>"
+		],
+		"description": "Добавляет ссылку с картинкой и классом IBG"
+	},
+	"Add input tag": {
+		"scope": "html",
+		"prefix": "inp",
+		"body": "<input autocomplete=\"off\" type=\"text\" name=\"form[]\" data-error=\"Ошибка\" placeholder=\"\" class=\"input\">",
+		"description": "Добавляет input со настройками"
+	},
+	"Add container": {
+		"scope": "html",
+		"prefix": "cnt",
+		"body": "<div class=\"${1:имя блока}__container\">\n\t$2\n</div>",
+		"description": "Добавляет ограничивающий контейнер"
+	},
+	"Adaptiv Value": {
+		"scope": "scss",
+		"prefix": "av",
+		"body": [
+			"@include adaptiveValue(\"${1:font-size}\", $2, $3);"
+		],
+		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
+	"EM": {
+		"scope": "scss",
+		"prefix": "em",
+		"body": [
+			"em($1,$2)"
+		],
+		"description": "Вызов миксина перевода в EM"
+	},
+	"REM": {
+		"scope": "scss",
+		"prefix": "rem",
+		"body": [
+			"rem($1)"
+		],
+		"description": "Вызов миксина перевода в REM"
+	},
+	"Percent": {
+		"scope": "scss",
+		"prefix": "prc",
+		"body": [
+			"percent($1,$2)"
+		],
+		"description": "Вызов миксина перевода в %"
+	},
+	"Percent padding": {
+		"scope": "scss",
+		"prefix": "pbp",
+		"body": [
+			"padding-bottom: percent($1,$2);"
+		],
+		"description": "Отступ вниз с указанием %"
+	},
+	"Font Size in REM": {
+		"scope": "scss",
+		"prefix": "fz",
+		"body": [
+			"font-size: rem($1);"
+		],
+		"description": "Переводит PX в REM"
+	},
+	"Divade": {
+		"scope": "scss",
+		"prefix": "di",
+		"body": [
+			"math.div($1,$2)"
+		],
+		"description": "Деление чисел"
+	},
+	"Width with REM": {
+		"scope": "scss",
+		"prefix": "w",
+		"body": "width: rem($1);",
+		"description": "Добавляет width c переводом в REM"
+	},
+	"Height with REM": {
+		"scope": "scss",
+		"prefix": "h",
+		"body": "height: rem($1);",
+		"description": "Добавляет height c переводом в REM"
+	},
+	"Margin bottom with EM": {
+		"scope": "scss",
+		"prefix": "mbe",
+		"body": "margin-bottom: math.div($1, $2) + em;",
+		"description": "Добавляет нижний отступ c переводом в EM"
+	},
+	"Margin Bottom not last-child": {
+		"scope": "scss",
+		"prefix": "mbl",
+		"body": [
+			"&:not(:last-child) {margin-bottom: $1px;}"
+		],
+		"description": "Добавляет нижний отступ исключая последний объект"
+	},
+	"Margin Bottom not last-child with EM": {
+		"scope": "scss",
+		"prefix": "mble",
+		"body": [
+			"&:not(:last-child) {margin-bottom: em($1, $2);}"
+		],
+		"description": "Добавляет нижний отступ исключая последний объект c переводом в EM"
+	},
+	"Not last-child": {
+		"scope": "scss",
+		"prefix": "nlc",
+		"body": [
+			"&:not(:last-child) {\n\t$1\n}"
+		],
+		"description": "Исключая последний объект"
+	},
+	"Opacity": {
+		"scope": "scss",
+		"prefix": "op",
+		"body": "opacity: ${1:0};",
+		"description": "Добавляет относительный opacity"
+	},
+	"Line height": {
+		"scope": "scss",
+		"prefix": "lh",
+		"body": "line-height: math.div($1 , $2);",
+		"description": "Добавляет относительный line-height"
+	},
+	"Color inherit": {
+		"scope": "scss",
+		"prefix": "ci",
+		"body": "color: inherit;",
+		"description": "Наследовать цвет предка"
+	},
+	"Max width": {
+		"scope": "scss",
+		"prefix": "mw",
+		"body": "max-width: rem($1);",
+		"description": "Максимальная ширина"
+	},
+	"@media max": {
+		"prefix": "md",
+		"body": [
+			"@media (max-width: em($1)){\n\t $2 \n}"
+		],
+		"description": "Добавляет медиазапрос max-width c переводом в EM"
+	},
+	"@media min": {
+		"prefix": "mmd",
+		"body": [
+			"@media (min-width:em($1)){\n\t $2 \n}"
+		],
+		"description": "Добавляет медиазапрос min-width c переводом в EM"
+	},
+	"Add data-popup": {
+		"scope": "html",
+		"prefix": "pl",
+		"body": [
+			"data-popup=\"$1\""
+		],
+		"description": "Добавляет трибут для открытия попапа"
+	},
+	"JS Click": {
+		"scope": "javascript,typescript",
+		"prefix": "click",
+		"body": [
+			"${1:document}.addEventListener(\"click\", function (e) {\n\t$2\n});"
+		],
+		"description": "document.querySelectorAll"
+	},
+	"document.querySelector": {
+		"scope": "javascript,typescript",
+		"prefix": "dq",
+		"body": [
+			"const ${1:var} = document.querySelector('.$2');"
+		],
+		"description": "document.querySelector"
+	},
+	"document.querySelectorAll": {
+		"scope": "javascript,typescript",
+		"prefix": "dqa",
+		"body": [
+			"const ${1:var} =document.querySelectorAll('.$2');"
+		],
+		"description": "document.querySelectorAll"
+	},
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": [
+			"console.log('$1');"
+		],
+		"description": "Log output to console"
+	},
+	"z-index": {
+		"scope": "scss",
+		"prefix": "zi",
+		"body": [
+			"z-index: ${1:1};"
+		],
+		"description": "z-index"
+	},
+	"fbpp": {
+		"prefix": "fbpp",
+		"body": [
+			"flex: 0 0 percent($1, $2);"
+		],
+		"description": "fbpp"
+	},
+	"pp": {
+		"prefix": "pp",
+		"body": [
+			"padding: 0px 0px 0px 0px;"
+		],
+		"description": "padding"
+	},
+	"ppp": {
+		"prefix": "ppp",
+		"body": [
+			"padding: 0px $1px;"
+		],
+		"description": "padding2"
+	},
+	"ppt": {
+		"prefix": "ppt",
+		"body": [
+			"padding: $1px 0px 0px 0px;"
+		],
+		"description": "padding top"
+	},
+	"ppb": {
+		"prefix": "ppb",
+		"body": [
+			"padding: 0px 0px $1px 0px;"
+		],
+		"description": "padding bottom"
+	},
+	"ppl": {
+		"prefix": "ppl",
+		"body": [
+			"padding: 0px 0px 0px $1px;"
+		],
+		"description": "padding left"
+	},
+	"ppr": {
+		"prefix": "ppr",
+		"body": [
+			"padding: 0px $1px 0px 0px;"
+		],
+		"description": "padding right"
+	},
+	"mm": {
+		"prefix": "mm",
+		"body": [
+			"margin: 0px 0px 0px 0px;"
+		],
+		"description": "margin"
+	},
+	"mr": {
+		"prefix": "mr",
+		"body": [
+			"margin: 0px 0px 0px auto;"
+		],
+		"description": "margin"
+	},
+	"mmm": {
+		"prefix": "mmm",
+		"body": [
+			"margin: 0px $1px;"
+		],
+		"description": "margin2"
+	},
+	"mmt": {
+		"prefix": "mmt",
+		"body": [
+			"margin: $1px 0px 0px 0px;"
+		],
+		"description": "margin top"
+	},
+	"mmb": {
+		"prefix": "mmb",
+		"body": [
+			"margin: 0px 0px $1px 0px;"
+		],
+		"description": "margin bottom"
+	},
+	"mml": {
+		"prefix": "mml",
+		"body": [
+			"margin: 0px 0px 0px $1px;"
+		],
+		"description": "margin left"
+	},
+	"mmr": {
+		"prefix": "mmr",
+		"body": [
+			"margin: 0px $1px 0px 0px;"
+		],
+		"description": "margin right"
+	},
+	"mu": {
+		"prefix": "mu",
+		"body": [
+			"margin: 0px auto;"
+		],
+		"description": "margin center"
+	},
+	"mc": {
+		"prefix": "mc",
+		"body": [
+			"margin:auto;"
+		],
+		"description": "margin center"
+	},
+	"mwn": {
+		"prefix": "mwn",
+		"body": [
+			"max-width: none;"
+		],
+		"description": "max-width none"
+	},
+	"ps": {
+		"prefix": "ps",
+		"body": [
+			"position: absolute;width: 100%;height: 100%;top: 0;left: 0;"
+		],
+		"description": "position absolute"
+	},
+	"art": {
+		"prefix": "art",
+		"body": [
+			"width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid red;"
+		],
+		"description": "art"
+	},
+	"arb": {
+		"prefix": "arb",
+		"body": [
+			"width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 100px solid red;"
+		],
+		"description": "arb"
+	},
+	"arl": {
+		"prefix": "arl",
+		"body": [
+			"width: 0;height: 0;border-top: 50px solid transparent;border-right: 100px solid red;border-bottom: 50px solid transparent;"
+		],
+		"description": "arl"
+	},
+	"arr": {
+		"prefix": "arr",
+		"body": [
+			"width: 0;height: 0;border-top: 50px solid transparent;border-left: 100px solid red;border-bottom: 50px solid transparent;"
+		],
+		"description": "arr"
+	},
+	"drt": {
+		"prefix": "drt",
+		"body": [
+			"direction: rtl;"
+		],
+		"description": "drt"
+	},
+	"br5": {
+		"scope": "css,scss",
+		"prefix": "br5",
+		"body": [
+			"border-radius: 50%;"
+		],
+		"description": "br5"
+	},
+	"bs": {
+		"prefix": "bs",
+		"body": [
+			"box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"
+		],
+		"description": "bs"
+	},
+	"c0": {
+		"prefix": "c0",
+		"body": [
+			"color:#000;"
+		],
+		"description": "c0"
+	},
+	"wa": {
+		"prefix": "wa",
+		"body": [
+			"width: auto;"
+		],
+		"description": "wa"
+	},
+	"ha": {
+		"prefix": "ha",
+		"body": [
+			"height: auto;"
+		],
+		"description": "ha"
+	},
+	"color": {
+		"prefix": "c",
+		"body": [
+			"color: #${1:fff};"
+		],
+		"description": "color"
+	},
+	"c1": {
+		"prefix": "c1",
+		"body": [
+			"color: #fff;"
+		],
+		"description": "c1"
+	},
+	"an": {
+		"prefix": "an",
+		"body": [
+			"animation:${1:name} 1s infinite linear;"
+		],
+		"description": "aa"
+	},
+	"aa": {
+		"prefix": "aa",
+		"body": [
+			"transition: all 0.${1:3}s ease 0s;$2"
+		],
+		"description": "aa"
+	},
+	"ar": {
+		"prefix": "ar",
+		"body": [
+			"transform: rotate(-${1:180}deg);"
+		],
+		"description": "ar"
+	},
+	"as": {
+		"prefix": "as",
+		"body": [
+			"transform: scale(${1:1});"
+		],
+		"description": "as"
+	},
+	"at": {
+		"prefix": "at",
+		"body": [
+			"transform: translate(${1:0}px,${2:0}px);$3"
+		],
+		"description": "at"
+	},
+	"att": {
+		"prefix": "att",
+		"body": [
+			"transform: translate(0px,0px) rotate(0deg) scale(1) skew(0,0);"
+		],
+		"description": "at"
+	},
+	"ex": {
+		"prefix": "ex",
+		"body": [
+			"@extend %${1:};"
+		],
+		"description": "ex"
+	},
+	"ic": {
+		"prefix": "ic",
+		"body": [
+			"@extend %ic;"
+		],
+		"description": "ic"
+	},
+	"is": {
+		"prefix": "is",
+		"body": [
+			"img{max-width: 100%;}"
+		],
+		"description": "is"
+	},
+	"lc": {
+		"prefix": "lc",
+		"body": [
+			"&:last-child{\n\t$0\n}"
+		],
+		"description": "lc"
+	},
+	"fc": {
+		"prefix": "fc",
+		"body": [
+			"&:first-child{\n\t$0\n}"
+		],
+		"description": "fc"
+	},
+	"nc": {
+		"prefix": "nc",
+		"body": [
+			"&:nth-child($0){}"
+		],
+		"description": "nc"
+	},
+	"BeforeAfter": {
+		"prefix": "ba",
+		"body": [
+			"&::before,&::after{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "ba"
+	},
+	"After": {
+		"prefix": "a",
+		"body": [
+			"&::after{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "after"
+	},
+	"Before": {
+		"prefix": "b",
+		"body": [
+			"&::before{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "before"
+	},
+	"hv": {
+		"prefix": "hv",
+		"body": [
+			"&:hover{\n\t$0\n}"
+		],
+		"description": "hv"
+	},
+	"hhv": {
+		"prefix": "hhv",
+		"body": [
+			"@media (any-hover: hover){\n\t&:hover{\n\t\t$0\n\t}\n}"
+		],
+		"description": "hhv"
+	},
+	"acc": {
+		"prefix": "acc",
+		"body": [
+			"&:active{\n\t$0\n}"
+		],
+		"description": "acc"
+	},
+	"ac_css": {
+		"scope": "scss,css",
+		"prefix": "ac",
+		"body": [
+			"&._active{\n\t$0\n}"
+		],
+		"description": "ac_css"
+	},
+	"ac_html": {
+		"scope": "html,kit,javascript",
+		"prefix": "ac",
+		"body": [
+			"_active"
+		],
+		"description": "ac_html"
+	},
+	"bg+": {
+		"prefix": "bg+",
+		"body": [
+			"background: url('@img$0') 0 0 no-repeat;"
+		],
+		"description": "bg+"
+	},
+	"md1": {
+		"prefix": "md1",
+		"body": [
+			"@media (max-width:\\$pc){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"mmd1": {
+		"prefix": "mmd1",
+		"body": [
+			"@media (min-width:\\$pc){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md2": {
+		"prefix": "md2",
+		"body": [
+			"@media (max-width:\\$tablet){\n\t$0\n}"
+		],
+		"description": "md2"
+	},
+	"mmd2": {
+		"prefix": "mmd2",
+		"body": [
+			"@media (min-width:\\$tablet){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md3": {
+		"prefix": "md3",
+		"body": [
+			"@media (max-width:\\$mobile){\n\t $0 \n}"
+		],
+		"description": "md3"
+	},
+	"mmd3": {
+		"prefix": "mmd3",
+		"body": [
+			"@media (min-width:\\$mobile){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md4": {
+		"prefix": "md4",
+		"body": [
+			"@media (max-width:\\$mobileSmall){\n\t $0 \n}"
+		],
+		"description": "md4"
+	},
+	"mmd4": {
+		"prefix": "mmd4",
+		"body": [
+			"@media (min-width:\\$mobileSmall){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"fb": {
+		"prefix": "fb",
+		"body": [
+			"display: flex;"
+		],
+		"description": "fb"
+	},
+	"fbi": {
+		"prefix": "fbi",
+		"body": [
+			"display: inline-flex;"
+		],
+		"description": "fbi"
+	},
+	"fbo": {
+		"prefix": "fbo",
+		"body": [
+			"order:${1:1};"
+		],
+		"description": "fbo"
+	},
+	"fbs": {
+		"prefix": "fbs",
+		"body": [
+			"justify-content:${1:space-between};"
+		],
+		"description": "fbs"
+	},
+	"fbai": {
+		"prefix": "fbai",
+		"body": [
+			"align-items:${1:center};"
+		],
+		"description": "fbai"
+	},
+	"fbw": {
+		"prefix": "fbw",
+		"body": [
+			"flex-wrap: wrap;"
+		],
+		"description": "fbw"
+	},
+	"fbd": {
+		"prefix": "fbd",
+		"body": [
+			"flex-direction: column;"
+		],
+		"description": "fbd"
+	},
+	"fbg": {
+		"prefix": "fbg",
+		"body": [
+			"flex: 1 1 100%;"
+		],
+		"description": "fbg"
+	},
+	"fbga": {
+		"prefix": "fbga",
+		"body": [
+			"flex: 1 1 auto;"
+		],
+		"description": "fbga"
+	},
+	"fbgh": {
+		"prefix": "fbgh",
+		"body": [
+			"flex: 0 1 50%;"
+		],
+		"description": "fbgh"
+	},
+	"fbgt": {
+		"prefix": "fbgt",
+		"body": [
+			"flex: 0 1 33.333%;"
+		],
+		"description": "fbgt"
+	},
+	"fbgq": {
+		"prefix": "fbgq",
+		"body": [
+			"flex: 0 1 25%;"
+		],
+		"description": "fbgq"
+	},
+	"fbp": {
+		"prefix": "fbp",
+		"body": [
+			"flex: 0 0 $1px;"
+		],
+		"description": "fbp"
+	},
+	"fbc": {
+		"prefix": "fbc",
+		"body": [
+			"justify-content:center;align-items: center;"
+		],
+		"description": "fbc"
+	},
+	"lcm": {
+		"prefix": "lcm",
+		"body": [
+			"&:last-child{margin:0px 0px 0px 0px;}"
+		],
+		"description": "lcm"
+	},
+	"hvu": {
+		"prefix": "hvu",
+		"body": [
+			"&:hover{text-decoration: underline;}"
+		],
+		"description": "hvu"
+	},
+	"hvn": {
+		"prefix": "hvn",
+		"body": [
+			"&:hover{text-decoration: none;}"
+		],
+		"description": "hvn"
+	},
+	"bt": {
+		"prefix": "bt",
+		"body": [
+			"body.touch &{\n\t$1\n}"
+		],
+		"description": "bt"
+	},
+	"kf": {
+		"prefix": "kf",
+		"body": "@keyframes ${1:name} {\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}",
+		"description": "kf"
+	},
+	"qa": {
+		"scope": "html,kit",
+		"prefix": "qa",
+		"body": "<div class=\"quantity\"><div class=\"quantity__button quantity__button_plus _icon-plus\"></div><div class=\"quantity__input\"><input autocomplete=\"off\" type=\"text\" name=\"form[]\" value=\"1\"></div><div class=\"quantity__button quantity__button_minus _icon-minus\"></div></div>",
+		"description": "qa"
+	},
+	"Textarea": {
+		"scope": "html,kit",
+		"prefix": "txta",
+		"body": "<textarea autocomplete=\"off\" name=\"form[]\" placeholder=\"$1\" data-error=\"Ошибка\" class=\"input\"></textarea>",
+		"description": "txta"
+	},
+	"Select": {
+		"prefix": "sel",
+		"body": "<select name=\"form[]\" class=\"form\">\n\t<option value=\"1\" selected>Пункт №1</option>\n\t<option value=\"2\">Пункт №2</option>\n\t<option value=\"3\">Пункт №3</option>\n\t<option value=\"4\">Пункт №4</option>\n</select>",
+		"description": "sel"
+	},
+	"Radio buttons": {
+		"prefix": "opt",
+		"body": "<div class=\"options\">\n\t<div class=\"options__item\">\n\t\t<input hidden id=\"o_1\" class=\"options__input\" checked type=\"radio\" value=\"1\" name=\"option\">\n\t\t<label for=\"o_1\" class=\"options__label\"><span class=\"options__text\">${1:Текст}</span></label>\n\t</div>\n\t<div class=\"options__item\">\n\t\t<input hidden id=\"o_2\" class=\"options__input\" type=\"radio\" value=\"2\" name=\"option\">\n\t\t<label for=\"o_2\" class=\"options__label\"><span class=\"options__text\">${2:Текст}</span></label>\n\t</div>\n</div>",
+		"description": ""
+	},
+	"CheckBox": {
+		"prefix": "chk",
+		"body": "<div class=\"checkbox\">\n\t<input id=\"c_1\" data-error=\"Ошибка\" class=\"checkbox__input\" type=\"checkbox\" value=\"1\" name=\"form[]\">\n\t<label for=\"c_1\" class=\"checkbox__label\"><span class=\"checkbox__text\">${1:Текст}</span></label>\n</div>",
+		"description": ""
+	},
+	"Button": {
+		"prefix": "btn",
+		"body": "<button type=\"submit\" class=\"button\">${1:Отправить}</button>",
+		"description": ""
+	},
+	"Button Item": {
+		"prefix": "bbtn",
+		"body": "<button type=\"button\" class=\"${1:class}\">${2:Текст}</button>",
+		"description": ""
+	},
+	"Button Link": {
+		"prefix": "abtn",
+		"body": "<a href=\"\" class=\"button\">${1:Текст}</a>",
+		"description": ""
+	},
+	"str": {
+		"prefix": "str",
+		"body": "<div class=\"${1:block}\">\n\t<div class='${1:block}__container'>\n\t\t<div class=\"${1:block}__title\"></div>\n\t\t<div class=\"${1:block}__row\">\n\t\t\t<div class=\"${1:block}__column\">\n\t\t\t\t$2\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>",
+		"description": "str"
+	},
+	"menu": {
+		"prefix": "menu",
+		"body": "<div class=\"header__menu menu\">\n\t<button type=\"button\" class=\"menu__icon icon-menu\"><span></span></button>\n\t<nav class=\"menu__body\">\n\t\t<ul class=\"menu__list\">\n\t\t\t<li class=\"menu__item\"><a href=\"\" class=\"menu__link\"></a></li>\n\t\t</ul>\n\t</nav>\n</div>",
+		"description": "menu"
+	},
+	"logo": {
+		"prefix": "logo",
+		"body": "<a href=\"\" class=\"header__logo\"><img data-src=\"../img/logo.svg\" alt=\"\"></a>",
+		"description": "logo"
+	},
+	"Image": {
+		"prefix": "img",
+		"body": "<img data-src=\"@img$0\" alt=\"\">",
+		"description": "img"
+	},
+	/*
+	"Image": {
+		"prefix": "img",
+		"body": "<img src=\"img$0\" alt=\"\">",
+		"description": "img"
+	},
+	*/
+	"sp": {
+		"prefix": "sp",
+		"body": "//========================================================================================================================================================\n$1",
+		"description": "sp"
+	},
+	"nowrap": {
+		"prefix": "wsnw",
+		"body": "white-space: nowrap;",
+		"description": "nowrap"
+	},
+	"vc1": {
+		"prefix": "vc1",
+		"body": "color: #794f45;",
+		"description": "vc1"
+	},
+	"vc2": {
+		"prefix": "vc2",
+		"body": "color: #77608d;",
+		"description": "vc2"
+	},
+	"vc3": {
+		"prefix": "vc3",
+		"body": "color: #7A956B;",
+		"description": "vc3"
+	},
+	"bc1": {
+		"prefix": "bc1",
+		"body": "background-color: #794f45;",
+		"description": "bc1"
+	},
+	"bc2": {
+		"prefix": "bc2",
+		"body": "background-color: #77608d;",
+		"description": "bc2"
+	},
+	"bc3": {
+		"prefix": "bc3",
+		"body": "background-color: #7A956B;",
+		"description": "bc3"
+	},
+}
