@@ -5,15 +5,17 @@
 		background-color: $mainDarkColor;
 		color: #fff;
 	}
+	// .header__body
+	&__body {}
 }
 .top-header {
-	padding: 10px 0;
+	padding: rem(10) 0;
 	// .top-header__container
 	&__container {
 		display: flex;
 		align-items: center;
-		gap: 20px;
-		min-height: 50px;
+		gap: rem(20);
+		min-height: rem(50);
 	}
 	// .top-header__menu
 	&__menu {
@@ -31,6 +33,7 @@
 		}
 	}
 }
+//====================================================================================================
 .menu {
 	// .menu__body
 	&__body {}
@@ -49,8 +52,186 @@
 		line-height: math.div(20, 16);
 	}
 }
-.icon-menu {
+//====================================================================================================
+.body-header {
+	padding: rem(10) 0;
+	background-color: #ecf1f2;
+	// .body-header__container
+	&__container {
+		display: flex;
+		min-height: rem(70);
+		align-items: center;
+	}
+	// .body-header__logo
+	&__logo {
+		@extend %ic;
+		@extend ._icon-logo;
+		font-size: rem(42);
+		color: $mainDarkColor;
+	}
+	// .body-header__search
+	&__search {
+		flex: 1 1 auto;
+		padding-right: rem(20);
+		@include adaptiveValue("padding-left", 158, 20);
+	}
+	// .body-header__actions
+	&__actions {}
 }
+.search-header {
+	max-width: rem(377);
+	background-color: rgba(7, 7, 7, 0.03);
+	border-radius: rem(3);
+	position: relative;
+	border: 1px solid rgba(4, 4, 4, 0.5);
+	// .search-header__button
+	&__button {
+		position: absolute;
+		background-color: transparent;
+		height: rem(41);
+		width: rem(41);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: rem(8);
+		font-size: rem(14);
+		color: rgba(0, 0, 0, 0.5);
+	}
+	// .search-header__input
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		border-radius: rem(3);
+		height: rem(41);
+		color: $mainColor;
+		padding: 0px rem(20) 0px rem(50);
+		&::placeholder {
+			color: rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+
+//====================================================================================================
+
+.actions-header {
+	display: flex;
+	align-items: center;
+	column-gap: rem(30);
+	// .actions-header__location
+	&__location {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 600;
+		margin: 0px rem(25) 0px 0px;
+		&::before{
+			font-size: rem(24);
+			margin: 0px em(10, 24) 0px 0px;
+		}
+	}
+	// .actions-header__phones
+	&__phones {}
+	// .actions-header__favorite
+	&__favorite {
+		font-size: rem(27);
+	}
+	// .actions-header__cart
+	&__cart {
+		flex: 0 0 auto;
+	}
+}
+.phones-header {
+	// .phones-header__items
+	&__items {}
+	// .phones-header__item
+	&__item {
+		position: relative;
+		display: flex;
+	}
+	// .phones-header__phone
+	&__phone {
+		font-weight: 600;
+		white-space: nowrap;
+		line-height: math.div(22 , 18);
+	}
+	// .phones-header__arrow
+	&__arrow {
+		color: $mainOrange;
+		font-size: rem(10);
+		transition: transform 0.3s ease 0s;
+		margin: 0px 0px 0px em(17, 16);
+		&._spoller-active {
+			transform: rotate(-180deg);
+		}
+	}
+	// .phones-header__list
+	&__list {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		left: 0;
+		margin: rem(5) 0px 0px 0px;
+		border-radius: rem(10);
+		background-color: #fff;
+		padding: rem(15);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		li {
+			&:not(:last-child) {
+				margin-bottom: em(8, 18);
+			}
+		}
+	}
+	// .phones-header__callback
+	&__callback {
+		margin: rem(3) 0px 0px 0px;
+		font-weight: 700;
+		line-height: math.div(22 , 18);
+		color: $mainOrange;
+	}
+}
+.cart-header {
+	display: flex;
+	align-items: center;
+	column-gap: 15px;
+	// .cart-header__icon
+	&__icon {
+		flex: 0 0 37px;
+		font-size: rem(35);
+		position: relative;
+		span {
+			position: absolute;
+			width: rem(14);
+			height: rem(14);
+			background-color: $mainOrange;
+			font-size: rem(7);
+			border-radius: 50%;
+			display: flex;
+			top: 0;
+			right: 0;
+			color: #fff;
+			justify-content:center;
+			align-items: center;
+		}
+	}
+	// .cart-header__body
+	&__body {
+		line-height: math.div(20, 16);
+		font-size: rem(16);
+		flex: 0 0 auto;
+	}
+	// .cart-header__summ
+	&__summ {
+		font-weight: 500;
+		&:not(:last-child) {
+			margin-bottom: em(5, 16);
+		}
+	}
+	// .cart-header__link
+	&__link {
+		color: $mainOrange;		
+	}
+}
+
 
 //====================================================================================================
 //Burger
