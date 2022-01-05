@@ -1,14 +1,15 @@
 //====================================================================================================
 .header {
 	// .header__top
-	&__top {
-		background-color: $mainDarkColor;
-		color: #fff;
-	}
+	&__top {}
 	// .header__body
 	&__body {}
+	// .header__catalog
+	&__catalog {}
 }
 .top-header {
+	background-color: $mainDarkColor;
+	color: #fff;
 	padding: rem(10) 0;
 	// .top-header__container
 	&__container {
@@ -31,6 +32,13 @@
 			font-size: rem(28);
 			margin-right: em(15, 28);
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }
 //====================================================================================================
@@ -50,6 +58,11 @@
 	&__link {
 		font-size: rem(16);
 		line-height: math.div(20, 16);
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 //====================================================================================================
@@ -128,6 +141,13 @@
 			font-size: rem(24);
 			margin: 0px em(10, 24) 0px 0px;
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 	// .actions-header__phones
 	&__phones {}
@@ -187,6 +207,11 @@
 		font-weight: 700;
 		line-height: math.div(22 , 18);
 		color: $mainOrange;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 .cart-header {
@@ -228,7 +253,148 @@
 	}
 	// .cart-header__link
 	&__link {
-		color: $mainOrange;		
+		color: $mainOrange;	
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}	
+	}
+}
+
+//====================================================================================================
+
+.catalog-header {
+	position: relative;
+	background-color: $mainDarkColor;
+	color: #fff;
+	// .catalog-header__container
+	&__container {}
+	// .catalog-header__menu
+	&__menu {}
+}
+.menu-catalog {
+	// .menu-catalog__list
+	&__list {
+		display: flex;
+		gap: 10px;
+		justify-content: space-between;
+	}
+	// .menu-catalog__item
+	&__item {}
+	// .menu-catalog__link
+	&__link {
+		min-height: rem(70);
+		display: flex;
+		padding: 0px rem(10);
+		justify-content:center;
+		align-items: center;
+		text-align: center;
+		position: relative;
+		transition: color 0.3s ease 0s;
+		&::after{
+			content:'';
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			bottom: 0;
+			left: rem(10);
+			height: 1px;
+			background-color: $mainOrange;
+			width: calc(100% - rem(20));
+			transition: all 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainOrange;
+				&::after{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		&._sub-menu-active {
+			&:hover {
+				color: $mainOrange;
+				&::after{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+	// .menu-catalog__sub-menu
+	&__sub-menu {
+		width: 100%;
+		left: 0;
+		top: 100%;
+		background-color: $mainDarkColor;
+	}
+}
+.sub-menu-catalog {
+	// .sub-menu-catalog__container
+	&__container {
+		padding: 0px rem(10);
+	}
+	// .sub-menu-catalog__block
+	&__block {
+		display: none;
+		@for $var from 1 to 6 {
+			&_#{$var} {	
+				// justify-content: start;			
+				grid-template-columns: repeat($var, minmax(auto, rem(320)));				
+			}
+		}
+		&._sub-menu-open {			
+			display: grid;
+		}
+	}
+	// .sub-menu-catalog__category
+	&__category {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		font-weight: 700;
+		padding: rem(30) rem(15) rem(30) 0px;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	// .sub-menu-catalog__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: rem(30) rem(15) rem(30) 0px;
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+	// .sub-menu-catalog__item
+	&__item {}
+	// .sub-menu-catalog__link
+	&__link {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	// .sub-menu-catalog__footer
+	&__footer {
+		padding: rem(30) rem(15) rem(30) 0px;
+	}
+	// .sub-menu-catalog__all
+	&__all {
+		font-size: rem(16);
+		color: $mainOrange;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
