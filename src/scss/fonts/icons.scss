@@ -1,18 +1,18 @@
 %ic {
-	font-family: "icons";
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 [class*="_icon-"] {
-	&:before {
-		@extend %ic;
-		display: block;
-	}
+  &:before {
+    @extend %ic;
+    display: block;
+  }
 }
 
 ._icon-arrow-buttom:before {
@@ -53,4 +53,7 @@
 }
 ._icon-user:before {
   content: "\e90c";
+}
+._icon-back:before {
+  content: "\e90d";
 }

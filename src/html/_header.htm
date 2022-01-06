@@ -1,24 +1,26 @@
 <header class="header">
 	<div class="header__top top-header">
 		<div class="top-header__container">
-			<div class="top-header__menu menu">
-				<nav class="menu__body">
-					<ul class="menu__list">
-						<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Оплата и доставка</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
-					</ul>
-				</nav>
-			</div>
+			<nav class="top-header__menu menu-top-header">
+				<ul data-da=".menu__body, 991.98" class="menu-top-header__list">
+					<li class="menu-top-header__item menu-top-header__item_catalog"><a href="" class="menu-top-header__link menu-top-header__link_catalog _icon-arrow-buttom">Каталог товаров</a></li>
+					<li class="menu-top-header__item"><a href="" class="menu-top-header__link">О нас</a></li>
+					<li class="menu-top-header__item"><a href="" class="menu-top-header__link">Оплата и доставка</a></li>
+					<li class="menu-top-header__item"><a href="" class="menu-top-header__link">Новости</a></li>
+					<li class="menu-top-header__item"><a href="" class="menu-top-header__link">Контакты</a></li>
+				</ul>
+			</nav>
 			<a href="#" class="top-header__user _icon-user"><span>Личный кабинет</span></a>
-			<button type="button" class="icon-menu"><span></span></button>
+			<nav hidden class="menu">
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<div class="menu__body"></div>
+			</nav>
 		</div>
 	</div>
 	<div class="header__body body-header">
 		<div class="body-header__container">
 			<a href="" class="body-header__logo"></a>
-			<div class="body-header__search">
+			<div data-da=".catalog-header__container, 479.98" class="body-header__search">
 				<form action="#" class="search-header">
 					<button type="submit" class="search-header__button _icon-search"></button>
 					<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="search-header__input">
@@ -26,10 +28,10 @@
 			</div>
 			<div class="body-header__actions actions-header">
 				<a href="" class="actions-header__location _icon-location"><span>Москва</span></a>
-				<div class="actions-header__phones phones-header">
+				<div data-da=".top-header__container, 991.98, first" class="actions-header__phones phones-header">
 					<div data-spollers class="phones-header__items">
 						<div class="phones-header__item">
-							<a href="tel:88007774967" class="phones-header__phone">8-800-777-49-67</a>
+							<a href="tel:88007774967" class="phones-header__phone"><span>8-800-777-49-67</span></a>
 							<button type="button" data-spoller class="phones-header__arrow _icon-arrow-buttom"></button>
 							<ul class="phones-header__list">
 								<li><a href="tel:88007774968" class="phones-header__phone">8-800-777-49-68</a></li>
@@ -40,28 +42,30 @@
 					</div>
 					<button type="button" data-popup="#callback" class="phones-header__callback">Заказать звонок</button>
 				</div>
-				<a href="" class="actions-header__favorite _icon-favorite"></a>
-				<div class="actions-header__cart cart-header">
+				<a href="" data-da=".top-header__container, 991.98, 2" class="actions-header__favorite _icon-favorite"></a>
+				<a href="" data-da=".top-header__container, 991.98, 2" class="actions-header__cart cart-header">
 					<div class="cart-header__icon _icon-cart"><span>0</span></div>
 					<div class="cart-header__body">
 						<div class="cart-header__summ">0 р.</div>
-						<a href="" class="cart-header__link">Оформить заказ</a>
+						<div href="" class="cart-header__link">Оформить заказ</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
 	<div class="header__catalog catalog-header">
 		<div class="catalog-header__container">
 			<nav class="catalog-header__menu menu-catalog">
+				<button type="button" class="menu-catalog__back _icon-back">Назад</button>
 				<ul class="menu-catalog__list">
 					<li class="menu-catalog__item"><button data-parent="1" class="menu-catalog__link">Каталог ножей</button></li>
 					<li class="menu-catalog__item"><button data-parent="2" class="menu-catalog__link">Клинковое оружие</button></li>
-					<li class="menu-catalog__item"><button data-parent="3" class="menu-catalog__link">Сувенирные изделия</button></li>
-					<li class="menu-catalog__item"><button data-parent="4" class="menu-catalog__link">Фонари ARMYTEK </button></li>
-					<li class="menu-catalog__item"><button data-parent="5" class="menu-catalog__link">Сопуствующие товары</button></li>
+					<li class="menu-catalog__item"><button class="menu-catalog__link">Сувенирные изделия</button></li>
+					<li class="menu-catalog__item"><button class="menu-catalog__link">Фонари ARMYTEK </button></li>
+					<li class="menu-catalog__item"><button class="menu-catalog__link">Сопуствующие товары</button></li>
 				</ul>
 				<div class="menu-catalog__sub-menu sub-menu-catalog">
+					<button type="button" class="sub-menu-catalog__back _icon-back">Назад</button>
 					<div class="sub-menu-catalog__container">
 						<div hidden data-submenu="1" class="sub-menu-catalog__block">
 							<div class="sub-menu-catalog__category">
