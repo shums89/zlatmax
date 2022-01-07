@@ -1,16 +1,76 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page-home">
+			<section class="page__main-block main-block">
+				<div class="main-block__container">
+					<div class="main-block__body">
+						<div class="main-block__slider">
+							<div class="main-block__swiper">
+								<div class="main-block__slide slide-main-block">
+									<div class="slide-main-block__content">
+										<h2 class="slide-main-block__title">Интернет магазин сертифицированных</h2>
+										<div class="slide-main-block__sub-title">златоустовских ножей</div>
+										<div class="slide-main-block__text">
+											Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине представлен наиболее широкий выбор Златоустовских ножей от Златоустовских Оружейных Фабрик и компаний, мы являемся официальными поставщиками.
+										</div>
+									</div>
+									<a href="" class="slide-main-block__button button">Подробнее</a>
+								</div>
+							</div>
+						</div>
+						<div class="main-block__media media-main-block">
+							<div class="media-main-block__body">
+								<div class="media-main-block__image">
+									<img src="@img/mainpage/main-block/image.png" alt="Картинка">
+								</div>
+								<div class="media-main-block__tips">
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_1"><span>+</span></button>
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_2"><span>+</span></button>
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_3"><span>+</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main-block__advantages advantages-main">
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="@img/mainpage/main-block/icons/01.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Гарантия 100% возврата денежных средств</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="@img/mainpage/main-block/icons/02.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Доставка по России, Казахстану и Белоруссии</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="@img/mainpage/main-block/icons/03.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Возможность оформление заказа без регистрации</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="@img/mainpage/main-block/icons/04.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Скидки постоянным покупателям</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
