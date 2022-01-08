@@ -2,13 +2,14 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
+	display: inline-block;
 	padding: 0px 0px;
 	background: $mainOrange;
 	box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
 	border-radius: 3px;
 	font-weight: 600;
 	font-size: rem(20);
+	text-align: center;
 	color: #fff;
 	padding: rem(8) rem(52);
 	line-height: math.div(32, 20);
