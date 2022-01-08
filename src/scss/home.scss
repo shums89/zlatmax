@@ -10,6 +10,9 @@
     display: grid;
     align-items: start;
     grid-template-columns: 1fr percent(635, 1600);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 43, 30);
+    }
   }
   // .main-block__slider
   &__slider {
@@ -247,14 +250,26 @@
   }
 }
 .advantages-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: rem(10);
+  justify-content: space-between;
   // .advantages-main__item
   &__item {
+    display: grid;
+    gap: rem(17);
+    text-align: center;
+    max-width: rem(290);
   }
   // .advantages-main__icon
   &__icon {
   }
   // .advantages-main__text
   &__text {
+    color: #fff;
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: math.div(32, 20);
   }
 }
 
