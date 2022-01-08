@@ -8,13 +8,22 @@
   // .main-block__body
   &__body {
     display: grid;
+    align-items: start;
     grid-template-columns: 1fr percent(635, 1600);
   }
   // .main-block__slider
   &__slider {
+    margin: 0px rem(-30);
+    padding: 0px rem(30);
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
   }
   // .main-block__swiper
   &__swiper {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
   }
   // .main-block__slide
   &__slide {
@@ -25,7 +34,76 @@
   // .main-block__advantages
   &__advantages {
   }
+  // .main-block__controll
+  &__controll {
+  }
 }
+
+.controll-main-block {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: rem(20);
+  // .controll-main-block__dotts
+  &__dotts {
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: rem(15);
+    .swiper-pagination-bullet {
+      cursor: pointer;
+      height: rem(40);
+      width: rem(18);
+      position: relative;
+      transition: all 0.3s ease 0s;
+      &::after{
+        content:'';
+        height: rem(2);
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translate(0px, -50%);
+        background-color: #fff;
+      }
+      &::before {
+        content:'';
+        background-color: $mainOrange;        
+        width: rem(10);
+        height: rem(10);
+        top: 50%;
+        left: 0;
+        border-radius: 50%;
+        transform: translate(0px, -50%);
+        position: absolute;
+        opacity: 0;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      width: rem(30);
+      &::after{
+        background-color: $mainOrange;        
+      }
+      &::before {
+        opacity: 1;
+        transition: left 3s linear 0s;
+        left: rem(20);
+      }
+    }
+  }
+  // .controll-main-block__fraction
+  &__fraction {
+    display: flex;
+    color: #fff;
+  }
+}
+.fraction-controll {
+  // .fraction-controll__current
+  &__current {
+  }
+  // .fraction-controll__all
+  &__all {
+  }
+}
+
 .slide-main-block {
   // .slide-main-block__content
   &__content {
