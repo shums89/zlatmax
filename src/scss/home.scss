@@ -49,9 +49,10 @@
     display: inline-grid;
     grid-auto-flow: column;
     gap: rem(15);
+    transform: translate(0px, 10%);
     .swiper-pagination-bullet {
       cursor: pointer;
-      height: rem(40);
+      height: rem(30);
       width: rem(18);
       position: relative;
       transition: all 0.3s ease 0s;
@@ -96,11 +97,19 @@
   }
 }
 .fraction-controll {
+  display: flex;
+  color: #fff;
+  align-items: flex-end;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   // .fraction-controll__current
   &__current {
+    color: $mainOrange;
+    font-size: rem(24);
   }
   // .fraction-controll__all
   &__all {
+    font-size: rem(18);
   }
 }
 
