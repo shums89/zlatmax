@@ -403,3 +403,8 @@
     }
   }
 }
+//====================================================================================================
+.hits-products {
+  @include adaptiveValue("padding-top", 50, 40);
+  @include adaptiveValue("padding-bottom", 120, 40);
+}
