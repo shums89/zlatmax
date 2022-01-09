@@ -1,7 +1,7 @@
 .main-block {
   background: url("@img/mainpage/main-block/bg.jpg") center / cover no-repeat;
-  @include adaptiveValue("padding-top", 40, 20);
-  @include adaptiveValue("padding-bottom", 60, 20);
+  @include adaptiveValue("padding-top", 40, 40);
+  @include adaptiveValue("padding-bottom", 60, 40);
   // .main-block__container
   &__container {
   }
@@ -292,3 +292,114 @@
 }
 
 //====================================================================================================
+.catalog-cards {
+  @include adaptiveValue("padding-top", 100, 40);
+  @include adaptiveValue("padding-bottom", 70, 40);
+  // .catalog-cards__container
+  &__container {
+    display: grid;
+    gap: rem(30);
+    @media (min-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));        
+    }
+  }
+  // .catalog-cards__item
+  &__item {
+  }
+}
+.item-catalog-cards {
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  min-height: rem(290);
+  transition: box-shadow 0.3s ease 0s;
+  @media (any-hover: hover){
+    &:hover{
+      box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);      
+    }
+  }
+  // .item-catalog-cards__body
+  &__body {
+    position: relative;
+    z-index: 2;
+    @include adaptiveValue("padding", 30, 20);
+  }
+  // .item-catalog-cards__title
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: em(30, 24);
+    }
+  }
+  // .item-catalog-cards__link-title
+  &__link-title {
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: math.div(34, 24);
+    display: inline-block;
+    &::after{
+      content:'';
+      width: rem(70);
+      height: rem(2);
+      display: block;
+      margin: rem(15) 0px 0px 0px;
+      background-color: $mainOrange;
+      transition: width 0.8s ease 0s;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        &::after{
+          width: 100%;          
+        }
+      }
+    }
+  }
+  // .item-catalog-cards__list
+  &__list {
+  }
+  // .item-catalog-cards__item
+  &__item {
+    position: relative;
+    padding: 0px 0px 0px rem(20);
+    &::before {
+      content:'';
+      width: rem(6);
+      height: rem(6);
+      background-color: $mainOrange;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: em(8, 18);
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+  // .item-catalog-cards__link
+  &__link {
+    font-size: rem(18);
+    line-height: math.div(24, 18);
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  // .item-catalog-cards__image
+  &__image {    
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transform: translate(0px, 8%);
+    img {
+      max-width: 100%;
+    }
+    @media (min-width: $mobileSmall) {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;   
+    }
+  }
+}
