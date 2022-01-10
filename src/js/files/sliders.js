@@ -138,13 +138,14 @@ function initSliders() {
 			pagination: {
 				el: '.products-slider__dotts',
 				clickable: true,
+				dynamicBullets: true
 			},
 			// Arrows
 			// navigation: {
 			// 	nextEl: '.about__more .more__item_next',
 			// 	prevEl: '.about__more .more__item_prev',
 			// },
-			/*
+
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
@@ -159,12 +160,11 @@ function initSliders() {
 					slidesPerView: 3,
 					spaceBetween: 20,
 				},
-				1268: {
+				1370: {
 					slidesPerView: 4,
 					spaceBetween: 30,
 				},
 			},
-			*/
 			on: {
 				init: function (swiper) {
 
