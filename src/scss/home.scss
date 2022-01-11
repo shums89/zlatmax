@@ -290,7 +290,6 @@
     line-height: math.div(32, 20);
   }
 }
-
 //====================================================================================================
 .catalog-cards {
   @include adaptiveValue("padding-top", 100, 40);
@@ -407,4 +406,88 @@
 .hits-products {
   @include adaptiveValue("padding-top", 50, 40);
   @include adaptiveValue("padding-bottom", 120, 40);
+  &_no-top {
+    padding-top: 0;
+  }
+}
+.sale-products {
+  @include adaptiveValue("padding-top", 120, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &_no-bottom {
+    padding-bottom: 0;
+  }
+}
+//====================================================================================================
+.articles-module {
+  @include adaptiveValue("padding-bottom", 120, 40);
+  // .articles-module__container
+  &__container {
+  }
+  // .articles-module__title
+  &__title {
+    letter-spacing: 0.05em;
+    font-size: rem(30);
+    font-weight: 700;
+    line-height: math.div(46, 30);
+    &:not(:last-child) {
+      margin-bottom: em(30, 30);
+    }
+  }
+  // .articles-module__items
+  &__items {
+    display: grid;
+    gap: rem(30);
+    grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+  }
+  // .articles-module__item
+  &__item {
+  }
+}
+.item-article {
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.3s ease 0s;
+  @media (any-hover: hover){
+    &:hover{
+      box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+  // .item-article__image-ibg
+  &__image-ibg {
+    padding-bottom: percent(200, 376);
+  }
+  // .item-article__body
+  &__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("padding", 25, 15);
+  }
+  // .item-article__title
+  &__title {
+    flex: 1 1 auto;
+    &:not(:last-child) {
+      margin-bottom: em(16, 20);
+    }
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  // .item-article__link-title
+  &__link-title {
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: math.div(34, 20);
+  }
+  // .item-article__date
+  &__date {
+    color: #ababab;
+    font-size: rem(16);
+    line-height: math.div(24, 16);
+  }
 }
