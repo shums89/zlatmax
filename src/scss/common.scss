@@ -76,10 +76,22 @@
   grid-template-rows: auto 1fr;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease 0s;
+  position: relative;
   @media (any-hover: hover){
     &:hover{
       box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
     }
+  }
+  // .product-card__sale
+  &__sale {
+    position: absolute;
+    top: rem(20);
+    left: 0;
+    color: #fff;
+    background-color: $mainOrange;
+    padding: rem(6) rem(22);
+    z-index: 20;
+    pointer-events: none;
   }
   // .product-card__image
   &__image {
@@ -340,3 +352,96 @@
     }
   }
 }
+//====================================================================================================
+.breadcrumbs {
+  white-space: nowrap;
+  overflow: auto;
+  height: rem(22);
+  // .breadcrumbs__list
+  &__list {
+    display: flex;
+  }
+  // .breadcrumbs__item
+  &__item {
+  }
+  // .breadcrumbs__link
+  &__link {
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    &::after{
+      content: "\e900";
+      @extend %ic;
+      transform: rotate(-90deg);
+      font-size: rem(6);
+      margin: 0px em(10, 6);
+    }
+  }
+  // .breadcrumbs__current
+  &__current {
+    color: $mainOrange;
+  }
+}
+//====================================================================================================
+.title {
+  font-weight: 700;
+  font-size: rem(24);
+  line-height: math.div(29, 24);
+  &:not(:last-child) {
+    margin-bottom: em(25, 24);
+  }
+}
+//====================================================================================================
+.pagging {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: rem(30);
+  // .pagging__arrow
+  &__arrow {
+    color: $mainOrange;
+    &::before {
+      font-size: rem(10);
+      transform: rotate(-90deg);
+    }
+    &:disabled {
+      color: rgba(0, 0, 0, 0.12);;
+    }
+    // .pagging__arrow_left
+    &_left {
+      transform: rotate(-180deg);
+    }
+    // .pagging__arrow_right
+    &_right {
+    }
+  }
+  // .pagging__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: rem(13);
+  }
+  // .pagging__item
+  &__item {
+  }
+  // .pagging__link
+  &__link {
+    width: rem(34);
+    height: rem(34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    &._active {
+      background-color: $mainOrange;
+      color: #fff;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $mainOrange;
+        color: #fff;
+      }
+    }
+  }
+}
+//====================================================================================================

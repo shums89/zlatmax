@@ -19,4 +19,10 @@
 			box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.63);
 		}
 	}
+	&_border {
+		background-color: #fff;
+		border: 1px solid $mainOrange;
+		color: $mainOrange;
+		box-shadow: none;
+	}
 }

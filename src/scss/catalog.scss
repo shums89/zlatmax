@@ -1,0 +1,48 @@
+.catalog {
+  @include adaptiveValue("padding-bottom", 120, 40);
+  // .catalog__container
+  &__container {
+  }
+  // .catalog__body
+  &__body {
+    display: grid;
+    grid-template-columns: rem(375) 1fr;
+    gap: rem(30);
+  }
+  // .catalog__filter
+  &__filter {
+  }
+  // .catalog__content
+  &__content {
+  }
+  // .catalog__control
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+    &:not(:last-child) {
+      margin-bottom: rem(20); 
+    }
+  }
+  // .catalog__products
+  &__products {
+    display: grid;
+    gap: rem(30);
+    grid-template-columns: repeat(auto-fill, minmax(rem(290), rem(375)));
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+  // .catalog__footer
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(20);
+  }
+  // .catalog__more
+  &__more {
+  }
+  // .catalog__pagging
+  &__pagging {
+  }
+}
+//====================================================================================================
