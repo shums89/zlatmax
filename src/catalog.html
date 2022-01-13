@@ -26,7 +26,42 @@
       <div class="catalog">
         <div class="catalog__container">
           <div class="catalog__body">
-            <div class="catalog__filter"></div>
+            <div class="catalog__filter filter-catalog">
+              <button type="button" class="filter-catalog__title">Фильтр товаров</button>
+              <div data-spollers class="filter-catalog__items">
+                <div class="filter-catalog__price price-filter">
+                  <button type="button" data-spoller class="price-filter__title _icon-spoller-arrow">Цена</button>
+                  <div data-range class="price-filter__body">
+                    <div class="price-filter__inpunts">
+                      <input data-range-from="0" autocomplete="off" type="text" value="2000" name="form[]" class="price-filter__input">
+                      <input data-range-to="5000" autocomplete="off" type="text" value="5000" name="form[]" class="price-filter__input">
+                    </div>
+                    <div data-range-item class="price-filter__range"></div>
+                  </div>
+                </div>
+                <div class="filter-catalog__item item-filter-catalog">
+                  <button type="button" data-spoller class="item-filter-catalog__title _icon-spoller-arrow">Производство</button>
+                  <div class="item-filter-catalog__body">
+                    <div class="item-filter-catalog__checkbox checkbox">
+                      <input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+                      <label for="c_1" class="checkbox__label"><span class="checkbox__text">АиР <small>(250)</small></span></label>
+                    </div>
+                    <div class="item-filter-catalog__checkbox checkbox">
+                      <input id="c_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+                      <label for="c_2" class="checkbox__label"><span class="checkbox__text">Булат Сергея Баранова <small>(25)</small></span></label>
+                    </div>
+                    <div class="item-filter-catalog__checkbox checkbox">
+                      <input id="c_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+                      <label for="c_3" class="checkbox__label"><span class="checkbox__text">Булат Умерова <small>(265)</small></span></label>
+                    </div>
+                    <div class="item-filter-catalog__checkbox checkbox">
+                      <input id="c_4" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+                      <label for="c_4" class="checkbox__label"><span class="checkbox__text">ЗЗОСС <small>(18)</small></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="catalog__content">
               <div class="catalog__control">
                 <select name="form[]" class="control">
