@@ -46,7 +46,7 @@ flsFunctions.spollers();
 Документация:
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
@@ -81,7 +81,7 @@ flsForms.formFieldsInit();
 flsForms.formSubmit(true);
 
 /* Модуль формы "колличество" */
-// flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль формы "показать пароль" */
 // flsForms.formViewpass();

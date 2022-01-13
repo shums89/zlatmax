@@ -1,15 +1,18 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
+	width: 150px;
+	height: 50px;
 	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
+	border-radius: 3px;
 	// .quantity__button
 	&__button {
-		flex: 0 0 30px;
+		flex: 0 0 50px;
+		height: rem(50);
 		position: relative;
 		cursor: pointer;
+		color: #fff;
+		background-color: #000;
 		&::before,
 		&::after {
 			content: "";
@@ -20,15 +23,7 @@
 			margin: 0px 0px 0px -4.5px;
 			background-color: #a6a6a6;
 			width: 9px;
-			height: 1px;
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				&::before,
-				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
-				}
-			}
+			height: 2px;
 		}
 		// .quantity__button_plus
 		&_plus {
@@ -45,7 +40,8 @@
 		flex: 1 1 auto;
 		input {
 			height: 100%;
-			color: #a6a6a6;
+			color: #000;
+			background: rgba(210, 210, 210, 0.07);
 			font-size: 12px;
 			width: 100%;
 			text-align: center;

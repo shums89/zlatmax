@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper';
+import Swiper, { Navigation, Pagination, Parallax, Autoplay, Thumbs } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -224,6 +224,88 @@ function initSliders() {
 					spaceBetween: 30,
 				},
 			},
+			on: {
+				init: function (swiper) {
+
+				}
+			}
+		});
+	}
+	if (document.querySelector('.thumbs-images')) {
+		const thumbsSwiper = new Swiper('.thumbs-images', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination, Autoplay, Thumbs],
+			// effect: 'fade',
+			observer: true,
+			observeParents: true,
+			watchOverflow: true,
+			slidesPerView: 4,
+			spaceBetween: 16,
+			parallax: true,
+			// autoHeight: true,
+			speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			// Dotts
+			pagination: {
+				el: '.products-new__dotts',
+				clickable: true,
+				dynamicBullets: true
+			},
+			// Arrows
+			// navigation: {
+			// 	nextEl: '.about__more .more__item_next',
+			// 	prevEl: '.about__more .more__item_prev',
+			// },
+
+			breakpoints: {
+				992: {
+					slidesPerView: 3,
+				},
+				1330: {
+					slidesPerView: 4,
+					spaceBetween: 16,
+				},
+			},
+			on: {
+				init: function (swiper) {
+
+				}
+			}
+		});
+		new Swiper('.images-product__slider', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination, Autoplay, Thumbs],
+			// effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			thumbs: {
+				swiper: thumbsSwiper
+			},
+			observer: true,
+			observeParents: true,
+			watchOverflow: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			// autoHeight: true,
+			speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			// Arrows
+			// navigation: {
+			// 	nextEl: '.about__more .more__item_next',
+			// 	prevEl: '.about__more .more__item_prev',
+			// },
 			on: {
 				init: function (swiper) {
 
